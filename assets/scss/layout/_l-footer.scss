@@ -1,0 +1,11 @@
+@use "../global" as *;
+.l-footer {
+  width: 100%;
+  max-width: 100%;
+  padding: rem(60) 0;
+  &__copy{
+    text-align: center;
+    font-size: rem(14);
+    margin-top: rem(50);
+  }
+}

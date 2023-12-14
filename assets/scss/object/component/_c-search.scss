@@ -1,0 +1,30 @@
+@use "../../global" as *;
+
+.c-search {
+  &__blk {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    input[type="text"] {
+      width: 100%;
+      height: rem(15);
+      border: 1px solid $gray;
+      border-radius: rem(5);
+      padding: rem(10);
+      font-size: rem(14);
+      margin-right: rem(15);
+      &::placeholder {
+        color: $gray;
+      }
+    }
+    input[type="submit"] {
+      width: rem(100);
+      background-color: $color-primary;
+      border-radius: rem(5);
+      border: none;
+      padding: rem(10);
+      color: $white;
+      font-size: rem(14);
+    }
+  }
+}
