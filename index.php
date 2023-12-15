@@ -3,7 +3,7 @@
 <main class="l-main">
     <div class="l-inner">
         <div class="p-top">
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png" alt="">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png" alt=""></a>
             <h1 class="p-top__ttl">検索したいキーワードを入力してください</h1>
             <div class="p-top__search">
                 <?php get_search_form(); ?>

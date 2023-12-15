@@ -39,6 +39,4 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <header class="l-header">
-        <div class="l-inner"></div>
-    </header>
+    <?php get_template_part('temple-parts/navi'); ?>

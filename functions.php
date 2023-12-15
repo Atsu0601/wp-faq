@@ -137,6 +137,17 @@ add_action('manage_posts_custom_column', 'customize_manage_posts_custom_column',
 // add_filter( 'post_rewrite_rules', 'add_article_post_rewrite_rules' );
 
 
+//外観にメニュー追加
+function register_my_menus() { 
+  register_nav_menus( array( //複数のナビゲーションメニューを登録する関数
+  //'「メニューの位置」の識別子' => 'メニューの説明の文字列',
+    'l-header-menu' => 'Header Menu',
+    'l-footer-menu'  => 'Footer Menu',
+  ) );
+}
+add_action( 'after_setup_theme', 'register_my_menus' );
+
+
 //コピーライトの自動取得
 function get_copyright_date () {
 	$all_posts = get_posts('post_status=publish&order=ASC');
