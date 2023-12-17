@@ -4,8 +4,28 @@
       <?php
       wp_nav_menu(
         array(
-          'theme_location' => 'l-footer-menu', // メニューのロケーションを指定します
-          'menu_id'        => 'l-footer-menu', // メニューに適用するIDを指定します
+          'theme_location' => 'l-footer-menu-left', // メニューのロケーションを指定します
+          'menu_id'        => 'l-footer-menu-left', // メニューに適用するIDを指定します
+          'container'      => 'div', // メニューを囲むコンテナを指定します。ここではdivタグを使用しています
+          'container_class' => 'l-footer-menu-inner' // コンテナに適用するクラス名を指定します
+        )
+      );
+      ?>
+      <?php
+      wp_nav_menu(
+        array(
+          'theme_location' => 'l-footer-menu-center', // メニューのロケーションを指定します
+          'menu_id'        => 'l-footer-menu-center', // メニューに適用するIDを指定します
+          'container'      => 'div', // メニューを囲むコンテナを指定します。ここではdivタグを使用しています
+          'container_class' => 'l-footer-menu-inner' // コンテナに適用するクラス名を指定します
+        )
+      );
+      ?>
+      <?php
+      wp_nav_menu(
+        array(
+          'theme_location' => 'l-footer-menu-right', // メニューのロケーションを指定します
+          'menu_id'        => 'l-footer-menu-right', // メニューに適用するIDを指定します
           'container'      => 'div', // メニューを囲むコンテナを指定します。ここではdivタグを使用しています
           'container_class' => 'l-footer-menu-inner' // コンテナに適用するクラス名を指定します
         )

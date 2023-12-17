@@ -36,22 +36,37 @@
             <div class="p-top__faq">
                 <h2 class="c-ttl">よくある質問はこちら</h2>
                 <ul class="c-faq_accordion">
+                <?php
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    $args = array(
+                        'post_type' => 'faq',
+                        'posts_per_page' => 10,
+                        'paged' => $paged
+                    );
+                    $article_lists = new WP_Query($args);
+                    ?>
+                    <?php if ($article_lists->have_posts()) : ?>
+                        <?php while ($article_lists->have_posts()) : $article_lists->the_post(); ?>
                     <li class="c-faq_accordion__item">
                         <section>
-                            <h3 class="c-faq_accordion__item__ttl">お見積もりの目安を教えてください。</h3>
+                            <h3 class="c-faq_accordion__item__ttl"><?php the_field('question');?></h3>
                             <div class="c-faq_accordion__item__box">
-                                <p>内容によって変化いたしますのでまずはお問い合わせフォームよりご相談ください。</p>
+                                <p><?php the_field('answer');?></p>
                             </div>
                         </section>
                     </li>
-                    <li class="c-faq_accordion__item">
+                    <?php endwhile; ?>
+                    <?php else : ?>
+                        <p>新しい記事はありません</p>
+                    <?php endif; ?>
+                    <!-- <li class="c-faq_accordion__item">
                         <section>
                             <h3 class="c-faq_accordion__item__ttl">お見積もりの目安を教えてください。お見積もりの目安を教えてください。<br>お見積もりの目安を教えてください。お見積もりの目安を教えてください。</h3>
                             <div class="c-faq_accordion__item__box">
                                 <p>内容によって変化いたしますのでまずはお問い合わせフォームよりご相談ください。</p>
                             </div>
                         </section>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 

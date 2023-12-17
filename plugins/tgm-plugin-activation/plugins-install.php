@@ -107,6 +107,38 @@ function ceare_theam_register_required_plugins() {
             'force_activation'   => false,
             'force_deactivation' => false,
         ),
+		array(
+            'name'               => 'Advanced Custom Fields (ACF)',
+            'slug'               => 'advanced-custom-fields',
+            'required'           => true,
+            'source'             => 'http://downloads.wordpress.org/plugin/advanced-custom-fields.zip',
+            'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
+		array(
+            'name'               => 'Custom Post Type UI',
+            'slug'               => 'custom-post-type-ui',
+            'required'           => true,
+            'source'             => 'http://downloads.wordpress.org/plugin/custom-post-type-ui.zip',
+            'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
+		array(
+            'name'               => 'WordPress Popular Posts',
+            'slug'               => 'wordpress-popular-posts',
+            'required'           => true,
+            'source'             => 'http://downloads.wordpress.org/plugin/wordpress-popular-posts.zip',
+            'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
+		array(
+            'name'               => 'WP-PostViews',
+            'slug'               => 'wp-postviews',
+            'required'           => true,
+            'source'             => 'http://downloads.wordpress.org/plugin/wp-postviews.zip',
+            'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
 	);
 
 	/*

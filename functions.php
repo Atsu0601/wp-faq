@@ -142,7 +142,9 @@ function register_my_menus() {
   register_nav_menus( array( //複数のナビゲーションメニューを登録する関数
   //'「メニューの位置」の識別子' => 'メニューの説明の文字列',
     'l-header-menu' => 'Header Menu',
-    'l-footer-menu'  => 'Footer Menu',
+    'l-footer-menu-center'  => 'Footer Menu-center',
+    'l-footer-menu-left'  => 'Footer Menu left',
+    'l-footer-menu-right'  => 'Footer Menu right',
   ) );
 }
 add_action( 'after_setup_theme', 'register_my_menus' );
