@@ -1,7 +1,6 @@
 <footer class="l-footer">
   <div class="l-inner">
     <div class="l-footer__inner">
-      <a class="l-footer__logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/150x80.png" alt=""></a>
       <?php
       wp_nav_menu(
         array(
@@ -13,6 +12,7 @@
       );
       ?>
     </div>
+    <a class="l-footer__logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png" alt=""></a>
     <p class="l-footer__copy">&copy; <?php echo date('Y'); ?> Social All Rights Reserved.</p>
   </div>
 </footer>

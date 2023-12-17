@@ -7,16 +7,80 @@
     }
     &__search{
         max-width:rem(600);
-        margin: auto;
+        margin: 0 auto 0;
     }
 
     &__keyword{
-        ul{
-            list-style: none;
-            li{
+        max-width: rem(900);
+        margin: auto;
+        font-size: rem(14);
+        display: flex;
+        margin-bottom: rem(50);
+        &__ttl{
+            margin-right: rem(10);
+        }
+    }
+
+    &__btnlist{
+        display: flex;
+        justify-content: center;
+        margin-bottom: rem(100);
+        &__item{
+            margin: 0 rem(10);
+            background-color: #eee;
+            padding: rem(10) rem(20);
+            border-radius: rem(5);
+            h3{
+                text-align: center;
+            }
+            a{
+                display: block;
+            }
+            &:hover{
+                background-color: $color-primary;
+                transition: .3s;
                 a{
-                    color: $link-color;
-                    font-size: rem(14);
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &__faq{
+        margin-bottom: rem(100);
+    }
+
+    &__postview{
+        margin-bottom: rem(100);
+        .c-postview{
+            margin-top: rem(50);
+        }
+    }
+
+    &__news{
+        margin-bottom: rem(100);
+        &__list{
+            margin-top: rem(55);
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0 rem(45);
+            justify-content: start;
+            grid-template-columns: 1fr 1fr;
+            &__item{
+                margin-bottom: rem(35);
+                border-bottom: 1px solid #eee;
+                padding-bottom: rem(20);
+                &__ttl{
+                    font-size: rem(16);
+                    margin-bottom: rem(10);
+
+                }
+                &__date{
+                    font-size: rem(12);
+                    color: $gray;
+                    display: block;
+                    margin-bottom: rem(15);
                 }
             }
         }

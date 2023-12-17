@@ -1,9 +1,9 @@
 <header class="l-header">
     <div class="l-inner">
         <div class="l-header__inner">
-            <h1 class="l-header__logo">
+            <div class="l-header__logo">
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png">
-            </h1>
+            </div>
             <?php
             wp_nav_menu(
                 array(
@@ -15,6 +15,7 @@
                 )
             );
             ?>
+            <?php get_search_form(); ?>
             <button class="l-header__hamburger hamburger" id="js-hamburger">
                 <span></span>
                 <span></span>

@@ -1,0 +1,57 @@
+@use "../../global" as *;
+
+.c-faq_accordion {
+  list-style: none;
+  padding: 0;
+  &__item {
+    section {
+      border: 1px solid #ccc;
+    }
+    &__ttl {
+      position: relative;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: normal;
+      padding: rem(15) rem(25) rem(15) rem(60);
+      transition: all 0.5s ease;
+      &::before {
+        position: absolute;
+        content: "";
+        top: 45%;
+        right: rem(15);
+        display: inline-block;
+        vertical-align: middle;
+        color: #333;
+        line-height: 1;
+        width: 1em;
+        height: 1em;
+        border: 0.1em solid currentColor;
+        border-left: 0;
+        border-bottom: 0;
+        box-sizing: border-box;
+        transform: translateY(-50%) rotate(135deg);
+      }
+      &.close::before {
+        transform: rotate(-45deg);
+      }
+
+      &::after{
+        position: absolute;
+        content: "Q";
+        top: 50%;
+        left: rem(15);
+        transform: translateY(-50%);
+        font-size: rem(40);
+        font-weight: bold;
+        color: $color-primary;
+      }
+    }
+    &__box {
+      position: relative;
+      display: none;
+      background: #f3f3f3;
+      margin: 0 rem(25) rem(25) rem(25);
+      padding: rem(25);
+    }
+  }
+}

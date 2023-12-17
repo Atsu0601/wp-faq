@@ -1,0 +1,18 @@
+@use "../../global" as *;
+
+.c-search_keyword {
+  ul {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0 rem(10);
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    li {
+      a {
+        color: $link-color;
+        font-size: rem(14);
+      }
+    }
+  }
+}
