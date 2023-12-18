@@ -1,6 +1,7 @@
 @use "../../global" as *;
 
 .p-top {
+    margin-top: rem(140);
     &__ttl {
         text-align: center;
         font-size: 1rem;

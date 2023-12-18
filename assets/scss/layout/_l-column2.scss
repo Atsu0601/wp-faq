@@ -1,0 +1,12 @@
+@use "../global" as *;
+
+.l-column2{
+    display: flex;
+    justify-content: space-between;
+    gap: 0px rem(20);
+    margin-top: rem(40);
+}
+
+.l-sidebar{
+    width: 35%;
+}

@@ -71,6 +71,8 @@
           position: relative;
           text-decoration: none;
           font-size: rem(14);
+          text-decoration: none;
+          color: $black;
           @include mq() {
             display: block;
             width: 100%;

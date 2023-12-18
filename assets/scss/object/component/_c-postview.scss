@@ -19,10 +19,13 @@
         margin-bottom: rem(15);
         font-weight: bold;
       }
+      &__txt{
+        width: 95%;
+      }
       &__thumb{
         img{
             width: 100%;
-            max-width: 170px;
+            max-width: 270px;
         }
       }
     }
