@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    @include mq(md){
+    @include mq(md) {
       align-items: center;
     }
   }
@@ -22,7 +22,7 @@
   &__logo {
     max-width: rem(150);
     width: 100%;
-    @include mq(md){
+    @include mq(md) {
       max-width: rem(140);
       margin: rem(15) 0 rem(10);
     }
@@ -61,30 +61,33 @@
       width: 90%;
       padding-top: rem(150);
     }
-    li {
-      @include mq() {
-        width: 100%;
-      }
-      a {
-        position: relative;
-        text-decoration: none;
-        font-size: rem(14);
+    ul {
+      list-style: none;
+      li {
         @include mq() {
-          display: block;
           width: 100%;
-          padding: rem(20) 0;
-          border-bottom: rem(1) solid #eee;
         }
-        &:before {
+        a {
+          position: relative;
+          text-decoration: none;
+          font-size: rem(14);
           @include mq() {
-            position: absolute;
-            content: "\f105";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: rem(14);
-            top: 50%;
-            right: rem(20);
-            transform: translateY(-50%);
+            display: block;
+            width: 100%;
+            padding: rem(20) 0;
+            border-bottom: rem(1) solid #eee;
+          }
+          &:before {
+            @include mq() {
+              position: absolute;
+              content: "\f105";
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              font-size: rem(14);
+              top: 50%;
+              right: rem(20);
+              transform: translateY(-50%);
+            }
           }
         }
       }
