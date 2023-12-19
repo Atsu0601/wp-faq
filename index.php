@@ -61,6 +61,7 @@
                         <p>新しい記事はありません</p>
                     <?php endif; ?>
                 </ul>
+                <a href="<?php echo home_url('/'); ?>faq" class="c-btn_lg">よくある質問の一覧はこちら</a>
             </div>
 
             <div class="p-top__postview">
@@ -134,6 +135,7 @@
                         <p>新しい記事はありません</p>
                     <?php endif; ?>
                 </ul>
+                <a href="<?php echo home_url('/'); ?>news" class="c-btn_lg">お知らせの一覧はこちら</a>
             </div>
         </div>
     </div>

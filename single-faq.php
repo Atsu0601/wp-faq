@@ -3,13 +3,14 @@
 <main class="l-main">
     <div class="l-inner">
         <?php get_template_part('temple-parts/breadcrumbs'); ?>
-        
+
         <div class="l-column2">
-            <div class="p-single">
+            <div class="p-single_faq">
                 <h1 class="c-ttl__bk"><?php the_title(); ?></h1>
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
-                        <?php the_content(); ?>
+                        <h3 class=""><?php the_field('question'); ?></h3>
+                        <p><?php the_field('answer'); ?></p>
                     <?php endwhile; ?>
                 <?php else : ?>
                     <p>お探しの記事は見つかりませんでした。<br />

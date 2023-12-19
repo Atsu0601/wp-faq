@@ -6,6 +6,8 @@
     list-style: none;
     &__item {
       border-bottom: 1px solid #eee;
+      margin-bottom: rem(25);
+      padding-bottom: rem(25);
       a {
         display: block;
         width: 100%;

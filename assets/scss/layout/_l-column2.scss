@@ -3,10 +3,11 @@
 .l-column2{
     display: flex;
     justify-content: space-between;
-    gap: 0px rem(20);
+    gap: 0px rem(40);
     margin-top: rem(40);
 }
 
 .l-sidebar{
     width: 35%;
+    min-width: rem(310);
 }

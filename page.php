@@ -7,7 +7,7 @@
     <div class="l-column2">
       <div class="p-page">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <h1 class="p-page__ttl"><?php the_title() ?></h1>
+            <h1 class="c-ttl__bk"><?php the_title() ?></h1>
             <div class="p-page__content">
               <?php the_content() ?>
             </div>

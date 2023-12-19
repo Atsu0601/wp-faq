@@ -90,53 +90,6 @@ add_action('manage_posts_custom_column', 'customize_manage_posts_custom_column',
 
 
 
-/**
- * 投稿の設定変更
- * post_has_archive()
- *
- * @param object $args args.
- * @param string $post_type post_type.
- * @return object $args args.
- */
-// function post_has_archive( $args, $post_type ) {
-//     if ( 'post' === $post_type ) {
-//         $args['rewrite']     = true;
-//         $args['has_archive'] = 'news';
-//     }
-//     return $args;
-// }
-// add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
-
-/**
- * 投稿のパーマリンク変更.
- * add_article_post_permalink()
- *
- * @param string $permalink permalink.
- * @return string $permalink permalink.
- */
-// function add_article_post_permalink( $permalink ) {
-//     $permalink = '/news' . $permalink;
-//     return $permalink;
-// }
-// add_filter( 'pre_post_link', 'add_article_post_permalink' );
-
-/**
- * 投稿のリライトルール変更
- * add_article_post_rewrite_rules()
- *
- * @param object $post_rewrite post_rewrite.
- * @return string $return_rule return_rule.
- */
-// function add_article_post_rewrite_rules( $post_rewrite ) {
-//     $return_rule = array();
-//     foreach ( $post_rewrite as $regex => $rewrite ) {
-//         $return_rule[ 'news/' . $regex ] = $rewrite;
-//     }
-//     return $return_rule;
-// }
-// add_filter( 'post_rewrite_rules', 'add_article_post_rewrite_rules' );
-
-
 //外観にメニュー追加
 function register_my_menus() { 
   register_nav_menus( array( //複数のナビゲーションメニューを登録する関数
