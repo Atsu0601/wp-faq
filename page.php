@@ -14,12 +14,9 @@
         <?php endwhile;
         endif; ?>
       </div>
+
       <div class="l-sidebar">
-        <ul>
-          <li>
-            <p>aaaa</p>
-          </li>
-        </ul>
+          <?php get_template_part('sidebar'); ?>
       </div>
     </div>
   </div>

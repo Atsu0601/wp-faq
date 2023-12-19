@@ -149,6 +149,14 @@ function register_my_menus() {
 }
 add_action( 'after_setup_theme', 'register_my_menus' );
 
+function my_theme_widgets_init() {
+  register_sidebar( array(
+    'name' => 'Main Sidebar',
+    'id' => 'main-sidebar',
+  ) );
+}
+add_action( 'widgets_init', 'my_theme_widgets_init' );
+
 
 //コピーライトの自動取得
 function get_copyright_date () {

@@ -52,6 +52,7 @@
                             <h3 class="c-faq_accordion__item__ttl"><?php the_field('question');?></h3>
                             <div class="c-faq_accordion__item__box">
                                 <p><?php the_field('answer');?></p>
+                                <a href="<?php the_permalink(); ?>" class="c-btn_bk">詳しくはこちら</a>
                             </div>
                         </section>
                     </li>
@@ -59,14 +60,6 @@
                     <?php else : ?>
                         <p>新しい記事はありません</p>
                     <?php endif; ?>
-                    <!-- <li class="c-faq_accordion__item">
-                        <section>
-                            <h3 class="c-faq_accordion__item__ttl">お見積もりの目安を教えてください。お見積もりの目安を教えてください。<br>お見積もりの目安を教えてください。お見積もりの目安を教えてください。</h3>
-                            <div class="c-faq_accordion__item__box">
-                                <p>内容によって変化いたしますのでまずはお問い合わせフォームよりご相談ください。</p>
-                            </div>
-                        </section>
-                    </li> -->
                 </ul>
             </div>
 
@@ -78,7 +71,7 @@
                         <?php $cat_id = isset($cat[0]) ? $cat[0]->term_id : ''; ?>
                         <?php if (function_exists('wpp_get_mostpopular')) : ?>
                             <?php $args = array(
-                                'post_type' => 'post, page, faq',
+                                'post_type' => 'post, page',
                                 'limit' => 12,
                                 'range' => 'last30days',
                                 'order_by' => 'views',

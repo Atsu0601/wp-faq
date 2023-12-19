@@ -6,7 +6,6 @@
 
         <div class="l-column2">
             <div class="p-search">
-                <?php get_search_form(); ?>
 
                 <?php if (have_posts()) : ?>
                     <?php if (isset($_GET['s']) && empty($_GET['s'])) : ?>
@@ -76,11 +75,7 @@
             </div>
 
             <div class="l-sidebar">
-                <ul>
-                    <li>
-                        <p>aaaa</p>
-                    </li>
-                </ul>
+                <?php get_template_part('sidebar'); ?>
             </div>
         </div>
     </div>
