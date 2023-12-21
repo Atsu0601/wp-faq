@@ -6,7 +6,7 @@
     
     <div class="l-column2">
       <div class="p-archive">
-        <ul>
+        <ul class="p-archive__blk">
           <?php
           $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
           $args = array(
@@ -18,9 +18,9 @@
           ?>
           <?php if ($article_lists->have_posts()) : ?>
             <?php while ($article_lists->have_posts()) : $article_lists->the_post(); ?>
-              <li>
+              <li class="archive__blk__list">
                 <a href="<?php the_permalink(); ?>">
-                  <h3>
+                  <h3 class="archive__blk__list__ttl">
                     <?php
                     if (mb_strlen($post->post_title, 'UTF-8') > 20) {
                       $title = mb_substr($post->post_title, 0, 20, 'UTF-8');
@@ -30,7 +30,7 @@
                     }
                     ?>
                   </h3>
-                  <p>
+                  <p class="archive__blk__list__txt">
                     <?php
                     if (mb_strlen($post->post_content, 'UTF-8') > 200) {
                       $content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 200, 'UTF-8'));
