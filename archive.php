@@ -41,6 +41,7 @@
                     ?>
                   </p>
                 </a>
+                <div class="p-archive__blk__list__readmore"><a href="<?php the_permalink(); ?>" class="c-btn_bk">詳しくはこちら</a></div>
               </li>
             <?php endwhile; ?>
           <?php else : ?>

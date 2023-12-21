@@ -6,6 +6,7 @@
     
     <div class="l-column2">
       <div class="p-archive">
+        <h1 class="page-title c-ttl__bk">よくある質問一覧</h1>
         <ul class="p-archive__blk">
           <?php
           $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -41,6 +42,7 @@
                     ?>
                   </p>
                 </a>
+                <div class="p-archive__blk__list__readmore"><a href="<?php the_permalink(); ?>" class="c-btn_bk">詳しくはこちら</a></div>
               </li>
             <?php endwhile; ?>
           <?php else : ?>
