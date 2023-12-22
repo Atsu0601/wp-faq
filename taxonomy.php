@@ -5,7 +5,7 @@
         <?php get_template_part('temple-parts/breadcrumbs'); ?>
 
         <div class="l-column2">
-            <div class="p-taxonomy">
+            <div class="p-archive">
                 <ul>
                     <?php
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -20,7 +20,7 @@
                         <?php while ($article_lists->have_posts()) : $article_lists->the_post(); ?>
                             <li>
                                 <a href="<?php the_permalink(); ?>">
-                                    <h3>
+                                    <h2 class="p-archive__blk__list__ttl">
                                         <?php
                                         if (mb_strlen($post->post_title, 'UTF-8') > 20) {
                                             $title = mb_substr($post->post_title, 0, 20, 'UTF-8');
@@ -29,8 +29,11 @@
                                             echo $post->post_title;
                                         }
                                         ?>
-                                    </h3>
-                                    <p>
+                                    </h2>
+                                    <div class="p-archive__blk__list__date">
+                                        <time datetime="<?php the_time('Y/m/d'); ?>"><?php the_time('Y/m/d'); ?></time>
+                                    </div>
+                                    <p class="p-archive__blk__list__txt">
                                         <?php
                                         if (mb_strlen($post->post_content, 'UTF-8') > 200) {
                                             $content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 200, 'UTF-8'));
@@ -41,6 +44,10 @@
                                         ?>
                                     </p>
                                 </a>
+                                <ul class="p-archive__blk__list__meta">
+                                    <li><?php the_category(', ') ?></li>
+                                </ul>
+                                <div class="p-archive__blk__list__readmore"><a href="<?php the_permalink(); ?>" class="c-btn_bk">詳しくはこちら</a></div>
                             </li>
                         <?php endwhile; ?>
                     <?php else : ?>

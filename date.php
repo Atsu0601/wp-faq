@@ -20,6 +20,9 @@
                                 <h2 class="p-archive__blk__list__ttl">
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h2>
+                                <div class="p-archive__blk__list__date">
+                                    <time datetime="<?php the_time('Y/m/d'); ?>"><?php the_time('Y/m/d'); ?></time>
+                                </div>
                                 
                                 <a href="<?php the_permalink(); ?>" class="p-archive__blk__list__thumbnail"><?php the_post_thumbnail(); ?></a>
                                 <div class="p-archive__blk__list__txt">
@@ -33,8 +36,7 @@
                                     ?>
                                 </div>
                                 <ul class="p-archive__blk__list__meta">
-                                    <li><?php the_time('Y/m/d'); ?></li>
-                                    <li><?php echo $catname; ?></li>
+                                    <li><?php the_category(', ') ?></li>
                                 </ul>
                                 <div class="p-archive__blk__list__readmore"><a href="<?php the_permalink(); ?>" class="c-btn_bk">詳しくはこちら</a></div>
                             </div>

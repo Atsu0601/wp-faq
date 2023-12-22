@@ -3,7 +3,7 @@
 <main class="l-main">
   <div class="l-inner">
     <?php get_template_part('temple-parts/breadcrumbs'); ?>
-    
+
     <div class="l-column2">
       <div class="p-archive">
         <h1 class="page-title c-ttl__bk">お知らせ一覧</h1>
@@ -21,7 +21,7 @@
             <?php while ($article_lists->have_posts()) : $article_lists->the_post(); ?>
               <li class="p-archive__blk__list">
                 <a href="<?php the_permalink(); ?>">
-                  <h3 class="p-archive__blk__list__ttl">
+                  <h2 class="p-archive__blk__list__ttl">
                     <?php
                     if (mb_strlen($post->post_title, 'UTF-8') > 20) {
                       $title = mb_substr($post->post_title, 0, 20, 'UTF-8');
@@ -30,7 +30,10 @@
                       echo $post->post_title;
                     }
                     ?>
-                  </h3>
+                  </h2>
+                  <div class="p-archive__blk__list__date">
+                    <time datetime="<?php the_time('Y/m/d'); ?>"><?php the_time('Y/m/d'); ?></time>
+                  </div>
                   <p class="p-archive__blk__list__txt">
                     <?php
                     if (mb_strlen($post->post_content, 'UTF-8') > 200) {
