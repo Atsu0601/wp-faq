@@ -51,9 +51,11 @@ table{
 }
 
 a,
-button {
+button,
+input[type="submit"] {
   transition: .3s;
   &:hover {
     cursor: pointer;
+    opacity: .7;
   }
 }
