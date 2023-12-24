@@ -1,18 +1,8 @@
 @use "../../global" as *;
 
 .p-search {
-  &__blk {
-    padding: 0;
-    list-style: none;
-    &__list {
-      margin-bottom: rem(50);
-      &__ttl {
-        font-size: rem(16);
-        margin-bottom: rem(10);
-      }
-      &__txt {
-        font-size: rem(14);
-      }
-    }
+  &__result_ttl{
+    font-size: rem(18);
+    font-weight: bold;
   }
 }
