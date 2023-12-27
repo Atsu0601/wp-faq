@@ -3,7 +3,7 @@
 <main class="l-main">
     <div class="l-inner">
         <?php get_template_part('temple-parts/breadcrumbs'); ?>
-        
+
         <div class="l-column2">
             <div class="p-single">
                 <h1 class="c-ttl__bk"><?php the_title(); ?></h1>
@@ -14,14 +14,11 @@
                 <?php else : ?>
                     <p>お探しの記事は見つかりませんでした。<br />
                     <?php endif; ?>
-
-                    <div class="next_prev_post">
-                        <?php if (get_next_post()) : ?>
-                            <?php previous_post_link('&laquo; %link', '前の記事へ'); ?>
-                        <?php endif; ?>
-                        <?php if (get_previous_post()) : ?>
-                            <?php next_post_link('%link &raquo;', '次の記事へ'); ?>
-                        <?php endif; ?>
+                    
+                    <div class="single_bottom_nav">
+                        <p class="<?php if (get_previous_post()) : ?>single_bottom_nav_prev<?php endif; ?>"><?php previous_post_link('%link', '前へ'); ?></p>
+                        <p class="single_bottom_nav_back"><a href="<?php echo get_post_type_archive_link(get_post_type()); ?>">一覧に戻る</a></p>
+                        <p class="<?php if (get_next_post()) : ?>single_bottom_nav_next<?php endif; ?>"><?php next_post_link('%link', '次へ'); ?></p>
                     </div>
             </div>
 
