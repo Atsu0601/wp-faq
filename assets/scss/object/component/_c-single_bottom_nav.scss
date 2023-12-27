@@ -1,0 +1,29 @@
+@use "../../global" as *;
+
+.c-single_bottom_nav{
+    display: grid;
+    align-items: center;
+    grid-template-columns:1fr 1fr 1fr;
+    &__back{
+        text-align: center;
+        a{
+            padding: rem(20);
+            font-size: rem(14);
+            color: $white;
+            background-color: $color-primary;
+        }
+    }
+    &__prev{
+        &__small{
+            font-size: rem(11);
+            display: block;
+        }
+    }
+    &__next{
+        text-align: right;
+        &__small{
+            font-size: rem(11);
+            display: block;
+        }
+    }
+}
