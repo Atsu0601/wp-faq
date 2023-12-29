@@ -46,6 +46,22 @@
                     </div>
 
                     <?php get_template_part('temple-parts/category_list'); ?>
+
+                    <?php
+                    $posts = get_field('relation_post');
+                    if ($posts) :
+                    ?>
+                        <div class="c-relation_post">
+                            <h2>関連の記事</h2>
+                            <ul class="c-relation_post__blk">
+                                <?php foreach ($posts as $post) : ?>
+                                    <li class="c-relation_post__blk__list">
+                                        <a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
             </div>
 
             <div class="l-sidebar">

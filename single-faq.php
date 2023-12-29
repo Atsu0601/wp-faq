@@ -18,7 +18,7 @@
 
                     <div class="c-single_bottom_nav">
                         <p class="<?php if (get_previous_post()) : ?>c-single_bottom_nav__prev<?php endif; ?>">
-                            <?php 
+                            <?php
                             $prev_post = get_previous_post();
                             if ($prev_post) {
                                 $prev_title = mb_strimwidth(get_the_title($prev_post->ID), 0, 20, '...');
@@ -33,7 +33,7 @@
                             <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>">一覧に戻る</a>
                         </p>
                         <p class="<?php if (get_next_post()) : ?>c-single_bottom_nav__next<?php endif; ?>">
-                            <?php 
+                            <?php
                             $next_post = get_next_post();
                             if ($next_post) {
                                 $next_title = mb_strimwidth(get_the_title($next_post->ID), 0, 20, '...');
@@ -45,6 +45,32 @@
                             ?>
                         </p>
                     </div>
+
+                    <div class="c-faq_taxonomy">
+                        <h2 class="c-faq_taxonomy__ttl">カテゴリー一覧</h2>
+                        <?php
+                        $terms = get_terms('faq_cate');
+                        foreach ($terms as $term) {
+                            echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+                        }
+                        ?>
+                    </div>
+                    
+                    <?php
+                    $posts = get_field('faq_relation_post');
+                    if ($posts) :
+                    ?>
+                        <div class="c-relation_post">
+                            <h2>関連のよくある質問</h2>
+                            <ul class="c-relation_post__blk">
+                                <?php foreach ($posts as $post) : ?>
+                                    <li class="c-relation_post__blk__list">
+                                        <a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
             </div>
 
             <div class="l-sidebar">
