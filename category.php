@@ -6,6 +6,9 @@
 
         <div class="l-column2">
             <div class="p-archive">
+
+            <?php get_template_part('temple-parts/category_list'); ?>
+
                 <?php
                 if (have_posts()) : ?>
                     <h1 class="c-ttl__bk">カテゴリー：<?php single_cat_title(); ?></h1>

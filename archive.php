@@ -6,6 +6,9 @@
 
     <div class="l-column2">
       <div class="p-archive">
+
+      <?php get_template_part('temple-parts/category_list'); ?>
+
         <ul class="p-archive__blk">
           <?php
           $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

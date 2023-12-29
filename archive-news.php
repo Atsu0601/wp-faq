@@ -53,6 +53,14 @@
           <?php endif; ?>
         </ul>
 
+        <div class="p-archive_faq__category">
+            <ul class="p-archive_faq__category__blk">
+              <li class="p-archive_faq__category__blk__list">
+                <a href=""></a>
+              </li>
+            </ul>
+        </div>
+
         <div class="pagenation">
           <?php get_template_part('temple-parts/pager'); ?>
         </div>

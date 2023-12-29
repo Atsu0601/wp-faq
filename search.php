@@ -5,15 +5,44 @@
         <?php get_template_part('temple-parts/breadcrumbs'); ?>
 
         <div class="l-column2">
+
+            <?php
+            // 検索ページテンプレートファイルの開始
+
+            get_header(); // WordPressのヘッダーを取得
+
+            // 検索キーワードを安全に取得
+            $search_keyword = isset($_GET['s']) ? esc_attr($_GET['s']) : '';
+
+            // カスタムクエリの引数を設定
+            $args = array(
+                'post_type'      => 'post', 'faq', // または 'page'、カスタム投稿タイプ名
+                'posts_per_page' => 10,     // 1ページに表示する投稿数
+                's'              => $search_keyword, // 検索キーワード
+                'paged'          => get_query_var('paged') ? get_query_var('paged') : 1, // ページネーション
+                // カスタムフィールドを含めるための meta_query
+                'meta_query'     => array(
+                    'relation' => 'OR', // 複数のカスタムフィールドを検索する場合の関係性
+                    array(
+                        'key'     => 'question_number',
+                        'value'   => $search_keyword,
+                        'compare' => 'LIKE'
+                    ),
+                    array(
+                        'key'     => 'admin_number',
+                        'value'   => $search_keyword,
+                        'compare' => 'LIKE'
+                    ),
+                    // 必要に応じて他のカスタムフィールド条件を追加
+                ),
+            );
+
+            // カスタムクエリを作成
+            $custom_query = new WP_Query($args);
+            ?>
             <div class="p-archive">
-
-                <?php if (have_posts()) : ?>
-                    <?php if (isset($_GET['s']) && empty($_GET['s'])) : ?>
-                        <p class="p-search__result_ttl">検索キーワードが未入力です。</p>
-                    <?php else : ?>
-                        <p class="p-search__result_ttl">“<?php echo $_GET['s']; ?>”の検索結果：<?php echo $wp_query->found_posts; ?>件</p>
-                    <?php endif; ?>
-
+                <?php if ($custom_query->have_posts()) : ?>
+                    <p class="p-search__result_ttl">“<?php echo $search_keyword; ?>”の検索結果：<?php echo $custom_query->found_posts; ?>件</p>
                     <ul class="p-archive__blk">
                         <?php while (have_posts()) : the_post(); ?>
                             <li class="p-archive__blk__list">
@@ -66,12 +95,24 @@
                         <?php endwhile; ?>
                     </ul>
                 <?php else : ?>
-                    <p>検索されたキーワードに該当する記事はありませんでした</p>
+                    <p class="p-search__result_ttl">検索されたキーワードに該当する記事はありませんでした</p>
                 <?php endif; ?>
 
                 <div class="l-pagenation">
-                    <?php get_template_part('temple-parts/pager'); ?>
+                    <!-- <?php get_template_part('temple-parts/pager'); ?> -->
+                    <?php
+                    // カスタムページネーションの表示
+                    $big = 999999999; // need an unlikely integer
+                    echo paginate_links(array(
+                        'base'    => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                        'format'  => '?paged=%#%',
+                        'current' => max(1, get_query_var('paged')),
+                        'total'   => $custom_query->max_num_pages
+                    ));
+                    ?>
                 </div>
+
+                <?php wp_reset_postdata(); ?>
             </div>
 
             <div class="l-sidebar">
