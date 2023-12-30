@@ -1,0 +1,22 @@
+@use "../../global" as *;
+
+.c-news_important {
+  background-color: #ff0000;
+  &__ttl {
+    font-size: rem(18);
+  }
+  &__blk {
+    display: flex;
+    gap: 0 rem(20);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &__list {
+      border-bottom: 1px solid $gray;
+      a {
+        padding: rem(10) rem(20);
+        font-size: rem(14);
+      }
+    }
+  }
+}

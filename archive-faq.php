@@ -34,6 +34,10 @@
           <?php endif; ?>
         </ul>
 
+        <div class="pagenation">
+          <?php get_template_part('temple-parts/pager'); ?>
+        </div>
+
         <div class="c-faq_taxonomy">
           <h2 class="c-faq_taxonomy__ttl">カテゴリー一覧</h2>
           <?php
@@ -43,10 +47,7 @@
           }
           ?>
         </div>
-
-        <div class="pagenation">
-          <?php get_template_part('temple-parts/pager'); ?>
-        </div>
+        
       </div>
 
       <div class="l-sidebar">

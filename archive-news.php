@@ -53,17 +53,20 @@
           <?php endif; ?>
         </ul>
 
-        <div class="p-archive_faq__category">
-            <ul class="p-archive_faq__category__blk">
-              <li class="p-archive_faq__category__blk__list">
-                <a href=""></a>
-              </li>
-            </ul>
-        </div>
-
         <div class="pagenation">
           <?php get_template_part('temple-parts/pager'); ?>
         </div>
+
+        <div class="c-faq_taxonomy">
+          <h2 class="c-faq_taxonomy__ttl">カテゴリー一覧</h2>
+          <?php
+          $terms = get_terms('news_cate');
+          foreach ($terms as $term) {
+            echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+          }
+          ?>
+        </div>
+      
       </div>
 
       <div class="l-sidebar">
