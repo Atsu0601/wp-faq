@@ -21,7 +21,7 @@
           ?>
           <?php if ($article_lists->have_posts()) : ?>
             <?php while ($article_lists->have_posts()) : $article_lists->the_post(); ?>
-              <li class="archive__blk__list">
+              <li class="p-archive__blk__list">
                 <a href="<?php the_permalink(); ?>">
                   <h2 class="archive__blk__list__ttl">
                     <?php
@@ -36,7 +36,7 @@
                   <div class="p-archive__blk__list__date">
                     <time datetime="<?php the_time('Y/m/d'); ?>"><?php the_time('Y/m/d'); ?></time>
                   </div>
-                  <p class="archive__blk__list__txt">
+                  <p class="p-archive__blk__list__txt">
                     <?php
                     if (mb_strlen($post->post_content, 'UTF-8') > 200) {
                       $content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 200, 'UTF-8'));

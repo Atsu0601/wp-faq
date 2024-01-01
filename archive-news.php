@@ -57,14 +57,16 @@
           <?php get_template_part('temple-parts/pager'); ?>
         </div>
 
-        <div class="c-faq_taxonomy">
-          <h2 class="c-faq_taxonomy__ttl">カテゴリー一覧</h2>
-          <?php
-          $terms = get_terms('news_cate');
-          foreach ($terms as $term) {
-            echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-          }
-          ?>
+        <div class="c-custom_taxonomy">
+          <h2 class="c-custom_taxonomy__ttl">カテゴリー一覧</h2>
+          <div class="c-custom_taxonomy__blk">
+            <?php
+            $terms = get_terms('news_cate');
+            foreach ($terms as $term) {
+              echo '<li class="c-custom_taxonomy__blk__list"><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+            }
+            ?>
+          </div>
         </div>
       
       </div>

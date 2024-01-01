@@ -6,7 +6,10 @@
 
         <div class="l-column2">
             <div class="p-archive">
-                <ul>
+                <?php get_template_part('temple-parts/category_list'); ?>
+
+                <h2 class="c-ttl__bk">カテゴリー：<?php single_term_title(); ?></h2>
+                <ul class="p-archive__blk">
                     <?php
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $args = array(
@@ -18,7 +21,7 @@
                     ?>
                     <?php if ($article_lists->have_posts()) : ?>
                         <?php while ($article_lists->have_posts()) : $article_lists->the_post(); ?>
-                            <li>
+                            <li class="p-archive__blk__list">
                                 <a href="<?php the_permalink(); ?>">
                                     <h2 class="p-archive__blk__list__ttl">
                                         <?php

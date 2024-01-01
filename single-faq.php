@@ -46,16 +46,18 @@
                         </p>
                     </div>
 
-                    <div class="c-faq_taxonomy">
-                        <h2 class="c-faq_taxonomy__ttl">カテゴリー一覧</h2>
-                        <?php
-                        $terms = get_terms('faq_cate');
-                        foreach ($terms as $term) {
-                            echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                        }
-                        ?>
+                    <div class="c-custom_taxonomy">
+                        <h2 class="c-custom_taxonomy__ttl">カテゴリー一覧</h2>
+                        <div class="c-custom_taxonomy__blk">
+                            <?php
+                            $terms = get_terms('faq_cate');
+                            foreach ($terms as $term) {
+                                echo '<li class="c-custom_taxonomy__blk__list"><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+                            }
+                            ?>
+                        </div>
                     </div>
-                    
+
                     <?php
                     $posts = get_field('faq_relation_post');
                     if ($posts) :
@@ -65,7 +67,7 @@
                             <ul class="c-relation_post__blk">
                                 <?php foreach ($posts as $post) : ?>
                                     <li class="c-relation_post__blk__list">
-                                        <a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
+                                        <a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
