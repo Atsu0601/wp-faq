@@ -139,6 +139,30 @@ function ceare_theam_register_required_plugins() {
             'force_activation'   => false,
             'force_deactivation' => false,
         ),
+		array(
+			'name'               => 'ACF: Better Search',
+			'slug'               => 'acf-better-search',
+			'required'           => true,
+			'source'             => 'http://downloads.wordpress.org/plugin/acf-better-search.zip',
+			'force_activation'   => false,
+			'force_deactivation' => false,
+		),
+		array(
+			'name'               => 'PublishPress Future',
+			'slug'               => 'post-expirator',
+			'required'           => true,
+			'source'             => 'http://downloads.wordpress.org/plugin/post-expirator.zip',
+			'force_activation'   => false,
+			'force_deactivation' => false,
+		),
+		array(
+			'name'               => 'WP Import Export Lite',
+			'slug'               => 'wp-import-export-lite',
+			'required'           => true,
+			'source'             => 'http://downloads.wordpress.org/plugin/wp-import-export-lite.zip',
+			'force_activation'   => false,
+			'force_deactivation' => false,
+		),
 	);
 
 	/*

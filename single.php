@@ -52,11 +52,24 @@
                     if ($posts) :
                     ?>
                         <div class="c-relation_post">
-                            <h2>関連の記事</h2>
+                            <h2 class="c-relation_post__ttl">関連の記事</h2>
                             <ul class="c-relation_post__blk">
                                 <?php foreach ($posts as $post) : ?>
                                     <li class="c-relation_post__blk__list">
-                                        <a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
+                                        <a href="<?php echo get_permalink($post->ID); ?>">
+                                            <h2 class="c-relation_post__blk__list__ttl"><?php echo get_the_title($post->ID); ?></h2>
+                                            <time class="c-relation_post__blk__list__time" datetime="<?php the_time('Y/m/d'); ?>"><?php the_time('Y/m/d'); ?></time>
+                                            <p class="c-relation_post__blk__list__txt">
+                                                <?php
+                                                if (mb_strlen($post->post_content, 'UTF-8') > 200) {
+                                                    $content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 200, 'UTF-8'));
+                                                    echo $content . '……';
+                                                } else {
+                                                    echo str_replace('\n', '', strip_tags($post->post_content));
+                                                }
+                                                ?>
+                                            </p>
+                                        </a>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
